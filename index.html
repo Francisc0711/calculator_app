@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Modern</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <main class="calculator-container">
+        <header class="calc-header">
+            <span class="calc-title">Calculator</span>
+            <div class="header-actions">
+                <button id="sound-toggle" class="icon-btn" title="Sunet Pornit/Oprit" aria-label="Comută sunetul">
+                    🔊
+                </button>
+                <button id="history-toggle" class="icon-btn" title="Istoric calcule" aria-label="Arată istoricul">
+                    🕒
+                </button>
+            </div>
+        </header>
+
+        <section class="display-container">
+            <div class="display-top">
+                <button id="copy-btn" class="copy-btn" title="Copiază rezultatul">Copiază</button>
+                <div id="previous-operand" class="previous-operand"></div>
+            </div>
+            <div id="current-operand" class="current-operand">0</div>
+        </section>
+
+        <section class="buttons-grid">
+            <button class="btn btn-action" data-action="clear">AC</button>
+            <button class="btn btn-action" data-action="delete">⌫</button>
+            <button class="btn btn-action" data-action="percent">%</button>
+            <button class="btn btn-operator" data-operator="÷">÷</button>
+
+            <button class="btn" data-number="7">7</button>
+            <button class="btn" data-number="8">8</button>
+            <button class="btn" data-number="9">9</button>
+            <button class="btn btn-operator" data-operator="×">×</button>
+
+            <button class="btn" data-number="4">4</button>
+            <button class="btn" data-number="5">5</button>
+            <button class="btn" data-number="6">6</button>
+            <button class="btn btn-operator" data-operator="-">−</button>
+
+            <button class="btn" data-number="1">1</button>
+            <button class="btn" data-number="2">2</button>
+            <button class="btn" data-number="3">3</button>
+            <button class="btn btn-operator" data-operator="+">+</button>
+
+            <button class="btn" data-action="negate">+/−</button>
+            <button class="btn" data-number="0">0</button>
+            <button class="btn" data-number=".">.</button>
+            <button class="btn btn-equals" data-action="calculate">=</button>
+        </section>
+
+        <aside id="history-panel" class="history-panel">
+            <div class="history-header">
+                <h3>Istoric Calcule</h3>
+                <button id="clear-history" class="clear-history-btn">Șterge tot</button>
+            </div>
+            <ul id="history-list" class="history-list">
+
+            </ul>
+        </aside>
+    </main>
+
+
+    <div id="toast" class="toast">Copiat în clipboard!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
